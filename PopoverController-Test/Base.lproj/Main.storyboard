@@ -1,25 +1,168 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PopoverController_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ1-7a-wVV">
+                                <rect key="frame" x="137" y="82" width="47" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Center"/>
+                                <connections>
+                                    <action selector="centerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TS4-OD-5BM"/>
+                                    <segue destination="K99-H0-cZd" kind="popoverPresentation" identifier="popHullo" popoverAnchorView="KJ1-7a-wVV" id="PNm-eR-s8m">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiX-Fs-7l3">
+                                <rect key="frame" x="12" y="82" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Left"/>
+                                <connections>
+                                    <action selector="leftButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pkx-QN-FIQ"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xi1-vG-XLF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Kmw-Ky-Q2q"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="K4W-OU-kEm">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="AfV-XL-Q5M">
+                                            <connections>
+                                                <segue destination="K99-H0-cZd" kind="popoverPresentation" identifier="popHullo2" popoverAnchorBarButtonItem="AfV-XL-Q5M" id="HJT-VR-8mP">
+                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                </segue>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHC-0B-OD5">
+                                <rect key="frame" x="272" y="82" width="36" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Right"/>
+                                <connections>
+                                    <action selector="rightButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qHc-ui-6Ge"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xi1-vG-XLF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="3rz-GQ-SYx"/>
+                            <constraint firstItem="nHC-0B-OD5" firstAttribute="top" secondItem="xi1-vG-XLF" secondAttribute="bottom" constant="38" id="7RM-3G-aK3"/>
+                            <constraint firstItem="KJ1-7a-wVV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9yk-rk-tRg"/>
+                            <constraint firstItem="nHC-0B-OD5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="62" id="FXl-Kh-rIs"/>
+                            <constraint firstItem="xi1-vG-XLF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Iti-zO-oie"/>
+                            <constraint firstItem="nHC-0B-OD5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="8" id="LCB-PS-j48"/>
+                            <constraint firstItem="KJ1-7a-wVV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="62" id="ZFn-hE-2qt"/>
+                            <constraint firstItem="iiX-Fs-7l3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="62" id="m99-pP-AvH"/>
+                            <constraint firstItem="xi1-vG-XLF" firstAttribute="centerX" secondItem="KJ1-7a-wVV" secondAttribute="centerX" id="rnq-jS-rbP"/>
+                            <constraint firstItem="iiX-Fs-7l3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="rwc-41-9e2"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="356" y="271"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wSi-kY-tdT">
+            <objects>
+                <viewController storyboardIdentifier="PopDate" id="Xvt-o7-Jhl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uQ8-cM-fg6"/>
+                        <viewControllerLayoutGuide type="bottom" id="FMr-e7-q4Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vAp-MD-lsE">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ng7-At-WiL">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                <animations/>
+                                <date key="date" timeIntervalSinceReferenceDate="469986354.29049599">
+                                    <!--2015-11-23 15:45:54 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ng7-At-WiL" firstAttribute="leading" secondItem="vAp-MD-lsE" secondAttribute="leading" id="6fH-QC-cDU"/>
+                            <constraint firstItem="ng7-At-WiL" firstAttribute="top" secondItem="vAp-MD-lsE" secondAttribute="top" id="Vq3-rW-HVV"/>
+                            <constraint firstItem="ng7-At-WiL" firstAttribute="bottom" secondItem="FMr-e7-q4Q" secondAttribute="top" id="htU-zd-8qO"/>
+                            <constraint firstAttribute="trailing" secondItem="ng7-At-WiL" secondAttribute="trailing" id="ja8-DQ-qdK"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="200"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h83-9h-G7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="481"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1zg-QS-5K1">
+            <objects>
+                <viewController id="K99-H0-cZd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hAj-sU-vzM"/>
+                        <viewControllerLayoutGuide type="bottom" id="iL2-v0-fE7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O81-1P-2LR">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hullo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqO-lW-HKs">
+                                <rect key="frame" x="114" y="130" width="73" height="39"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.55506069810000003" green="0.83605827099999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="TqO-lW-HKs" firstAttribute="centerY" secondItem="O81-1P-2LR" secondAttribute="centerY" id="NLA-hf-sZA"/>
+                            <constraint firstItem="TqO-lW-HKs" firstAttribute="centerX" secondItem="O81-1P-2LR" secondAttribute="centerX" id="rf0-FN-1y5"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73h-nb-ol5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="149"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HJT-VR-8mP"/>
+    </inferredMetricsTieBreakers>
 </document>
